@@ -1,0 +1,11 @@
+This code generate the Lyman-alpha coupling coefficient for 21-cm simulations. This takes halo files as input which contains positions and mass of the haloes. One needs to specify which SED to incorporate to geneate the Lyman-alpha fluxes at the grid points. The default halo files are from Cubep3m N-body simulations as also used in C2Ray (and GRIZZLY) simulations. The default SED is a blackbody spectrum with effective temperature of 3e4 K.
+
+!!Requirements for compiling the code
+mpi..
+
+!!How to run ..
+make
+mpirun -np 4 ./c_alpha
+
+
+
