@@ -106,7 +106,7 @@ SUBROUTINE readcube_new(n)
 
 	cn=0
 	DO i=1, cnt
-		if(mod(i,10000)==0) write(*,*) i
+		!if(mod(i,10000)==0) write(*,*) i
 		d=arr(i)
 		temp=cube1(i,:)
 		tmp=arr1(i)
@@ -202,6 +202,7 @@ SUBROUTINE readcube
 	open(unit=31,file=ifile, form='binary', status='old', iostat=fstat)
 	if(fstat /= 0) then
 		write(*,*) 'File missing!!ERROR!', ifile
+		write(*,*) 'File will be regenerated'
 		call	readcube_new(ncube)
 	else
 		read(31) q
